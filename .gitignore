@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# dbt
+profiles.yml
+target/
+dbt_packages/
+
+# Airflow
+logs/
+
+# VS Code
+.vscode/
+
+# Mac/Linux
+.DS_Store
+
+# Snowflake
+*.pem
+
+# Docker
+*.log
