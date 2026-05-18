@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: "Dimensão de clientes"
+    columns:
+      - name: cliente_id
+        tests:
+          - unique
+          - not_null
+      - name: concessionaria_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_concessionarias')
+              field: concessionaria_id
+  - name: dim_veiculos
+    description: "Dimensão de veículos"
+    columns:
+      - name: veiculo_id
+        tests:
+          - unique
+          - not_null
+      - name: valor_sugerido
+        tests:
+          - not_null
+          - expression:
+              expression: "valor_sugerido > 0"
+  - name: dim_concessionarias
+    description: "Dimensão de concessionárias"
+    columns:
+      - name: concessionaria_id
+        tests:
+          - unique
+          - not_null
+      - name: cidade_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cidades')
+              field: cidade_id
+  - name: dim_vendedores
+    description: "Dimensão de vendedores"
+    columns:
+      - name: vendedor_id
+        tests:
+          - unique
+          - not_null
+      - name: concessionaria_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_concessionarias')
+              field: concessionaria_id
+  - name: fct_vendas
+    description: "Fato de vendas"
+    columns:
+      - name: venda_id
+        tests:
+          - unique
+          - not_null
+      - name: cliente_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clientes')
+              field: cliente_id
+      - name: veiculo_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_veiculos')
+              field: veiculo_id
+      - name: concessionaria_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_concessionarias')
+              field: concessionaria_id
+      - name: vendedor_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vendedores')
+              field: vendedor_id
+      - name: valor_venda
+        tests:
+          - not_null
+          - expression:
+              expression: "valor_venda > 0"
+      - name: data_venda
+        tests:
+          - not_null
+      - name: data_inclusao
+        tests:
+          - not_null
+      - name: data_atualizacao
+        tests:
+          - not_null

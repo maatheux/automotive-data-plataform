@@ -6,9 +6,44 @@ sources:
       schema: STAGE
       tables:
         - name: cidades
+          tests:
+            - unique:
+                column_name: id_cidades
+            - not_null:
+                column_name: id_cidades
         - name: clientes
+          tests:
+            - unique:
+                column_name: id_clientes
+            - not_null:
+                column_name: id_clientes
         - name: concessionarias
+          tests:
+            - unique:
+                column_name: id_concessionarias
+            - not_null:
+                column_name: id_concessionarias
         - name: estados
+          tests:
+            - unique:
+                column_name: id_estados
+            - not_null:
+                column_name: id_estados
         - name: veiculos
+          tests:
+            - unique:
+                column_name: id_veiculos
+            - not_null:
+                column_name: id_veiculos
         - name: vendas
+          tests:
+            - unique:
+                column_name: id_vendas
+            - not_null:
+                column_name: id_vendas
         - name: vendedores
+          tests:
+            - unique:
+                column_name: id_vendedores
+            - not_null:
+                column_name: id_vendedores
