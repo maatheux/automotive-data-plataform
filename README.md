@@ -1,4 +1,4 @@
-# 🚗 Automotive Data Platform
+# Automotive Data Platform
 
 Projeto de Engenharia de Dados desenvolvido para simular o ambiente analítico de uma empresa do setor automotivo utilizando conceitos da Modern Data Stack.
 
@@ -66,16 +66,14 @@ Data Studio
 automotive-data-platform/
 │
 ├── airflow/
-│   ├── dags/
-│   ├── plugins/
-│   └── requirements.txt
+│   └── dags/
 │
 ├── dbt/
 │   ├── models/
 │   ├── macros/
 │   ├── snapshots/
 │   ├── tests/
-│   └── dbt_project.yml
+│   ├── dbt_project.yml
 │   └── dbt_tests.yml
 │
 ├── sql/
@@ -83,6 +81,8 @@ automotive-data-platform/
 │
 ├── docs/
 │
+├── .env.example
+├── docker-compose.yaml
 ├── README.md
 └── .gitignore
 ```
