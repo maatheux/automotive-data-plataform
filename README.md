@@ -165,7 +165,7 @@ A camada analítica é consumida por dashboards desenvolvidos no Google Data Stu
 
 # 🧱 Modelagem de Dados
 
-O projeto utiliza modelagem dimensional seguindo o conceito de Star Schema.
+O projeto utiliza modelagem dimensional seguindo o conceito de Snowflake Schema.
 
 ## Tabela Fato
 
@@ -268,6 +268,7 @@ Este projeto aplica diversos conceitos modernos de Engenharia de Dados:
 ## Snowflake
 
 ![Snowflake](./docs/images/snowflake.png)
+![Snowflake Diagram](./docs/images/snowflake-diagram.png)
 
 ## Dashboards Data Studio
 
